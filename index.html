@@ -51,7 +51,6 @@
     </nav>
     
 
-    <h1>test</h1>
 
     <!-- Hero Section -->
 <div class="hero-container">
@@ -357,54 +356,63 @@
 <div class="faq-container">
     <div class="container">
         <br>
-            <br>
-    <div class="faq-texts">
-        <h1 class="text-center">FREQUENTLY ASKED QUESTIONS</h1>
-    </div>
+        <br>
+        <div class="faq-texts">
+            <h1 class="text-center">FREQUENTLY ASKED QUESTIONS</h1>
+        </div>
 
         <div class="service-plans-section">
             <div class="service-plans-container">
-                <h3>What do your service plans include?</h3>
-                <p>Each of our service plans includes:</p>
-                <ul>
-                    <li>A dedicated team including an Email Marketing Specialist, Copywriter, Designer, Email Marketing Technician, and Account Manager.</li>
-                    <li>Customer-centered marketing strategy with Customer Lifecycle Flows and Advanced Flows.</li>
-                    <li>Regular account audits and ongoing adjustments.</li>
-                    <li>Advanced segmentation and targeting.</li>
-                    <li>Optimized ROI and engagement.</li>
-                    <li>Customizable email and SMS communication from your Email Marketing Specialist.</li>
-                    <li>Comprehensive monthly campaign review.</li>
-                    <li>Monthly reports that are in-depth with common KPIs we track and prioritize for your account.</li>
-                </ul>
+                <h3 class="accordion-header">What do your service plans include?</h3>
+                <div class="accordion-content">
+                    <p>Each of our service plans includes:</p>
+                    <ul>
+                        <li>A dedicated team including an Email Marketing Specialist, Copywriter, Designer, Email Marketing Technician, and Account Manager.</li>
+                        <li>Customer-centered marketing strategy with Customer Lifecycle Flows and Advanced Flows.</li>
+                        <li>Regular account audits and ongoing adjustments.</li>
+                        <li>Advanced segmentation and targeting.</li>
+                        <li>Optimized ROI and engagement.</li>
+                        <li>Customizable email and SMS communication from your Email Marketing Specialist.</li>
+                        <li>Comprehensive monthly campaign review.</li>
+                        <li>Monthly reports that are in-depth with common KPIs we track and prioritize for your account.</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
         <div class="service-plans-section">
             <div class="service-plans-container">
-                <h3>Which ESPs & eCommerce platforms do you work with?</h3>
-                <p>We specialize in Klaviyo, one of the only platforms that allows Cannabis-related marketing. We work with Shopify, Shopify Plus, Magento, WooCommerce, and other eCommerce stores. Our expertise ensures compliance with cannabis industry regulations across all platforms.</p>
-            </div>
-        </div>
-
-
-        <div class="service-plans-section">
-            <div class="service-plans-container">
-                <h3>How many emails come with my plan?</h3>
-                <p>We have several plan options based on the number of emails you would like us to create for your strategy each month. Depending on your company & marketing objectives, your Account Executive will help you select the plan that best fits your needs.</p>
+                <h3 class="accordion-header">Which ESPs & eCommerce platforms do you work with?</h3>
+                <div class="accordion-content">
+                    <p>We specialize in Klaviyo, one of the only platforms that allows Cannabis-related marketing. We work with Shopify, Shopify Plus, Magento, WooCommerce, and other eCommerce stores. Our expertise ensures compliance with cannabis industry regulations across all platforms.</p>
+                </div>
             </div>
         </div>
 
         <div class="service-plans-section">
             <div class="service-plans-container">
-                <h3>What does onboarding look like?</h3>
-                <p>The first thing we do is have you fill out a simple onboarding document. Then, we launch your project with a kick-off call where you meet your Email Marketing Specialist.</p>
+                <h3 class="accordion-header">How many emails come with my plan?</h3>
+                <div class="accordion-content">
+                    <p>We have several plan options based on the number of emails you would like us to create for your strategy each month. Depending on your company & marketing objectives, your Account Executive will help you select the plan that best fits your needs.</p>
+                </div>
             </div>
         </div>
 
         <div class="service-plans-section">
             <div class="service-plans-container">
-                <h3>Is there a minimum commitment required for your services?</h3>
-                <p>Absolutely not. We don’t believe in tying anyone down. If you stay, it’s because of the excellent service we provide, not a binding contract.</p>
+                <h3 class="accordion-header">What does onboarding look like?</h3>
+                <div class="accordion-content">
+                    <p>The first thing we do is have you fill out a simple onboarding document. Then, we launch your project with a kick-off call where you meet your Email Marketing Specialist.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-plans-section">
+            <div class="service-plans-container">
+                <h3 class="accordion-header">Is there a minimum commitment required for your services?</h3>
+                <div class="accordion-content">
+                    <p>Absolutely not. We don’t believe in tying anyone down. If you stay, it’s because of the excellent service we provide, not a binding contract.</p>
+                </div>
             </div>
         </div>
 
@@ -480,6 +488,19 @@
                 slidesToShow: 3
             }
         }]
+    });
+});
+
+
+$(document).ready(function() {
+    $('.accordion-header').click(function() {
+        // Toggle the active class
+        $(this).toggleClass('active');
+        // Slide toggle the content
+        $(this).next('.accordion-content').slideToggle(300);
+        // Close other opened sections
+        $('.accordion-content').not($(this).next()).slideUp(300);
+        $('.accordion-header').not($(this)).removeClass('active');
     });
 });
     </script>
